@@ -1,17 +1,23 @@
 const express = require('express');
 const app = express();
-const port = 9000;
+const port = 5000;
 
-router.get('/', (solicitud, respuesta) => {
-    respuesta.render('index', index.html)
+app.get('/', (req, res) => {
+    res.sendFile('./index.html', {
+        root: __dirname
+    })
 })
 
-router.get('/productos', (solicitud, respuesta) => {
-    respuesta.render('productos', productos.html)
+app.get('/productos', (req, res) => {
+    res.sendFile('./productos.html', {
+        root: __dirname
+    })
 })
 
-router.get('/clientes', (solicitud, respuesta) => {
-    respuesta.render('clientes', clientes.html)
+app.get('/clientes', (req, res) => {
+    res.sendFile('./clientes.html', {
+        root: __dirname
+    })
 })
 
 app.listen(port, () => {
