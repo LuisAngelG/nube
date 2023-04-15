@@ -13,3 +13,7 @@ router.get('/productos', (solicitud, respuesta) => {
 router.get('/clientes', (solicitud, respuesta) => {
     respuesta.render('clientes', clientes.html)
 })
+
+app.listen(port, () => {
+    console.log(port)
+})
